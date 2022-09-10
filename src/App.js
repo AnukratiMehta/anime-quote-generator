@@ -1,5 +1,5 @@
 import Quote from "./components/Quote"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Header from "./components/Header"
 import Icons from "./components/Icons"
 
@@ -18,13 +18,11 @@ export default function App() {
 
   async function fetchData() {
         setQuote(await fetchQuote())
-    }
+  }
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     setQuote(await fetchQuote())
-  //   } return fetchData()
-  // }, [])
+  useEffect(() => {
+    fetchData()
+   }, [])
 
 
   return (

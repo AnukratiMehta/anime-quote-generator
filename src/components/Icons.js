@@ -1,10 +1,11 @@
 import React from "react";
-// import { FontawesomeObject } from "@fortawesome/fontawesome-svg-core";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
 
 export default function Icons() {
     return (
-        <div class="icon-bar">
-            {/* <FontAwesomeIcon icon="fa-brands fa-square-facebook" /> */}
+        <div className="icon-bar">
+            <FontAwesomeIcon icon={faHouse} /> 
         </div>
     )
 }
