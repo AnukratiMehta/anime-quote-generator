@@ -5,9 +5,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
-body {
-    height: fit-content;
-  }
+
 
 .App {
     display: grid;
