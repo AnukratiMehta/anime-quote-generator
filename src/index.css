@@ -42,6 +42,9 @@ body {
     z-index: 2;
     max-width: fit-content;
     margin-left: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     
 }
 
@@ -145,7 +148,7 @@ img {
     cursor: pointer;
     margin-left: 5px;
     margin-bottom: 3px;
-    color: wheat;
+    
 }
 
 .icons:hover {

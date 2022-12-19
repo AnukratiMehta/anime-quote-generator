@@ -1,7 +1,7 @@
 import Quote from "./components/Quote"
 import React, { useState} from "react"
 // import Header from "./components/Header"
-import Icons from "./components/Icons"
+// import Icons from "./components/Icons"
  
 
 
@@ -12,13 +12,15 @@ export default function App() {
     quote: "The weak don’t get to decide anything, not even how they die."
   })
 
-  // const [image, setImage] = useState('url("Images/one-loop5.gif")')
+  const [image, setImage] = useState('url("Images/one-loop5.gif")')
 
-  // var images = ['url("Images/one-loop.gif")', 'url("Images/one-loop2.gif")']
+  var images = ['url("Images/one-loop.gif")', 'url("Images/one-loop2.gif")']
 
-  // function changeImage() {
-  //   setImage(images[Math.floor(Math.random() * images.length)])
-  // }
+  function changeImage() {
+    setImage(images[Math.floor(Math.random() * images.length)])
+  }
+
+
 
   const [color, setColor] = useState("#07687b")
 
@@ -37,7 +39,7 @@ export default function App() {
   async function fetchData() {
       setQuote(await fetchQuote())
       changeColor()
-      // changeImage()
+      changeImage()
     }
 
   // const image = 'url("Images/one-loop5.gif")'
@@ -45,7 +47,7 @@ export default function App() {
   const myStyle = {
     backgroundColor: color,
     color: color,
-    // backgroundImage: "url(" + image + ")",
+    backgroundImage: image,
     // backgroundPosition: "center",
     // backgroundRepeat: "no-repeat",
     // backgroundSize: "cover"
@@ -61,9 +63,9 @@ export default function App() {
 
   return (
     <div className= "App" style={myStyle}>
-      <Icons />
-      <Quote card={quote} bg={bg} col={col}/>
-      <button onClick={fetchData} style={col}>New Quote</button>
+      
+      <Quote card={quote} bg={bg} col={col} fetchData={fetchData} style={col}/>
+      
     </div>
   )
 }
